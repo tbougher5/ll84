@@ -17,7 +17,7 @@ Production (Render / Railway / Hugging Face Spaces):
 USE_API   = False                # True  → live NYC Open Data API
                                  # False → local CSV (see CSV_PATH)
 
-CSV_PATH  = "ll84_data_2024.csv"      # Path to the downloaded CSV file
+CSV_PATH  = "ll84_data.csv"      # Path to the downloaded CSV file
                                  # Download from:
                                  # https://data.cityofnewyork.us/Environment/
                                  # NYC-Building-Energy-and-Water-Data-Disclosure-for-/5zyy-y8am
@@ -26,7 +26,7 @@ API_URL   = "https://data.cityofnewyork.us/resource/5zyy-y8am.json"
 API_LIMIT = 50_000               # Max rows to pull (dataset ≈ 30k rows/year)
 API_YEAR  = None                 # e.g. "2022" to restrict to one year, None for all
 
-HEADER_FILE = "LL84_Header-Long.csv"  # Column inclusion config — TRUE rows are kept,
+HEADER_FILE = "LL84_Header.csv"  # Column inclusion config — TRUE rows are kept,
                                  # FALSE rows are dropped. Must be in the same
                                  # folder as this script.
 # ============================================================
@@ -221,6 +221,29 @@ DF: pd.DataFrame = DF_RAW[_KEEP].copy()
 print(f"[startup] Kept {len(DF.columns)} of {len(DF_RAW.columns)} columns "
       f"based on LL84_Header.csv.")
 
+# ── Force-coerce any column that is still object dtype but whose
+#    name suggests it should be numeric (GFA, year, counts, etc.).
+#    This catches columns like GFA that contain "Not Available" strings
+#    mixed with numbers, causing them to fail the 60% auto-coerce test.
+_FORCE_NUMERIC_PATTERNS = [
+    "gfa", "floor_area", "year_built", "number_of",
+    "occupancy", "score", "eui", "energy", "ghg",
+    "emissions", "intensity", "use_kbtu", "use_kwh",
+    "use_kgal", "use_therms", "percent", "pct",
+]
+for _c in DF.columns:
+    if DF[_c].dtype == object:
+        _c_lower = _c.lower()
+        if any(pat in _c_lower for pat in _FORCE_NUMERIC_PATTERNS):
+            _coerced = pd.to_numeric(DF[_c], errors="coerce")
+            _non_null_orig = DF[_c].notna().sum()
+            _non_null_new  = _coerced.notna().sum()
+            # Only apply if at least 30% of non-null values parsed as numbers
+            if _non_null_orig > 0 and (_non_null_new / _non_null_orig) >= 0.30:
+                DF[_c] = _coerced
+                print(f"[startup] Force-coerced '{_c}' to numeric "
+                      f"({_non_null_new:,}/{_non_null_orig:,} values converted).")
+
 
 # ─────────────────────────────────────────────────────────────
 #  AG GRID COLUMN DEFINITIONS
@@ -275,14 +298,27 @@ def build_col_defs(df: pd.DataFrame) -> list[dict]:
                     "defaultOption":       "contains",
                     "caseSensitive":       False,
                     "buttons":             ["reset"],
-                    # Enables the regex toggle in the filter menu
+                    # Cross-platform text matcher: null-safe, handles all
+                    # filter options, and treats "contains" as regex-capable.
                     "textMatcher": {
                         "function": (
                             "const { filterOption, value, filterText } = params; "
-                            "if (filterOption === 'contains') { "
-                            "  try { return new RegExp(filterText, 'i').test(value); } "
-                            "  catch(e) { return value.toLowerCase().includes(filterText.toLowerCase()); } "
-                            "} return false;"
+                            "if (value == null || value === undefined) return false; "
+                            "const v = String(value); "
+                            "const f = filterText || ''; "
+                            "switch (filterOption) { "
+                            "  case 'contains': "
+                            "    try { return new RegExp(f, 'i').test(v); } "
+                            "    catch(e) { return v.toLowerCase().includes(f.toLowerCase()); } "
+                            "  case 'notContains': "
+                            "    try { return !new RegExp(f, 'i').test(v); } "
+                            "    catch(e) { return !v.toLowerCase().includes(f.toLowerCase()); } "
+                            "  case 'equals': return v.toLowerCase() === f.toLowerCase(); "
+                            "  case 'notEqual': return v.toLowerCase() !== f.toLowerCase(); "
+                            "  case 'startsWith': return v.toLowerCase().startsWith(f.toLowerCase()); "
+                            "  case 'endsWith': return v.toLowerCase().endsWith(f.toLowerCase()); "
+                            "  default: return false; "
+                            "}"
                         )
                     },
                 },
@@ -748,7 +784,7 @@ def compute_stats(df: pd.DataFrame) -> tuple:
 
     if _valid_num(df, gfa_c):
         tot = pd.to_numeric(df[gfa_c], errors="coerce").sum()
-        tot_gfa = f"{tot / 1e6:.3f}M ft²"
+        tot_gfa = f"{tot / 1e3:,.0f}k ft²"
     else:
         tot_gfa = "—"
 
