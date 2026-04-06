@@ -1,0 +1,266 @@
+﻿Column,Include
+Calendar Year,TRUE
+Property ID,TRUE
+Property Name,TRUE
+Parent Property ID,TRUE
+Parent Property Name,TRUE
+Year Ending,TRUE
+"NYC Borough, Block and Lot (BBL)",TRUE
+NYC Building Identification Number (BIN),TRUE
+Address 1,TRUE
+City,TRUE
+Postal Code,TRUE
+Primary Property Type - Self Selected,TRUE
+Primary Property Type - Portfolio Manager-Calculated,TRUE
+National Median Reference Property Type,TRUE
+List of All Property Use Types (GFA) (ftÂ²),TRUE
+Largest Property Use Type,TRUE
+Largest Property Use Type - Gross Floor Area (ftÂ²),TRUE
+2nd Largest Property Use Type,TRUE
+2nd Largest Property Use Type - Gross Floor Area (ftÂ²),TRUE
+3rd Largest Property Use Type,TRUE
+3rd Largest Property Use Type - Gross Floor Area (ftÂ²),TRUE
+Year Built,TRUE
+Construction Status,TRUE
+Number of Buildings,TRUE
+Occupancy,TRUE
+Metered Areas (Energy),TRUE
+Metered Areas (Water),TRUE
+ENERGY STAR Score,TRUE
+National Median ENERGY STAR Score,TRUE
+Target ENERGY STAR Score,TRUE
+Reason(s) for No Score,TRUE
+ENERGY STAR Certification - Year(s) Certified (Score),TRUE
+Eligible for Certification for Report PED (Y/N),TRUE
+ENERGY STAR Certification - Last Approval Date,TRUE
+ENERGY STAR Certification - Application Status,TRUE
+Site EUI (kBtu/ftÂ²),TRUE
+Weather Normalized Site EUI (kBtu/ftÂ²),TRUE
+National Median Site EUI (kBtu/ftÂ²),TRUE
+Site Energy Use (kBtu),TRUE
+Weather Normalized Site Energy Use (kBtu),TRUE
+Electricity - Weather Normalized Site Electricity Use (Grid and Onsite Renewables) (kWh),TRUE
+Electricity - Weather Normalized Site Electricity Intensity (Grid and Onsite Renewables) (kWh/ftÂ²),TRUE
+Percent Electricity,TRUE
+Natural Gas - Weather Normalized Site Natural Gas Use (therms),TRUE
+Natural Gas - Weather Normalized Site Natural Gas Intensity (therms/ftÂ²),TRUE
+Source EUI (kBtu/ftÂ²),TRUE
+Weather Normalized Source EUI (kBtu/ftÂ²),TRUE
+National Median Source EUI (kBtu/ftÂ²),TRUE
+Source Energy Use (kBtu),TRUE
+Weather Normalized Source Energy Use (kBtu),TRUE
+Fuel Oil #1 Use (kBtu),TRUE
+Fuel Oil #2 Use (kBtu),TRUE
+Fuel Oil #4 Use (kBtu),TRUE
+Fuel Oil #5 & 6 Use (kBtu),TRUE
+Diesel #2 Use (kBtu),TRUE
+Propane Use (kBtu),TRUE
+Kerosene Use (kBtu),TRUE
+District Steam Use (kBtu),TRUE
+District Hot Water Use (kBtu),TRUE
+District Chilled Water Use (kBtu),TRUE
+Natural Gas Use (kBtu),TRUE
+Natural Gas Use (therms),TRUE
+Electricity Use - Grid Purchase (kBtu),TRUE
+Electricity Use - Grid Purchase (kWh),TRUE
+Electricity Use - Grid Purchase and Generated from Onsite Renewable Systems (kWh),TRUE
+Electricity Use - Grid Purchase and Generated from Onsite Renewable Systems (kBtu),TRUE
+Electricity Use â€“ Generated from Onsite Renewable Systems and Used Onsite (kWh),TRUE
+Electricity Use â€“ Generated from Onsite Renewable Systems and Used Onsite (kBtu),TRUE
+Electricity Use â€“ Generated from Onsite Renewable Systems (kWh),TRUE
+Electricity Use â€“ Generated from Onsite Renewable Systems and Exported (kWh),TRUE
+Annual Maximum Demand (kW),TRUE
+Annual Maximum Demand (MM/YYYY),TRUE
+Annual Maximum Demand (Meter Name (Meter ID)),TRUE
+Green Power - Onsite (kWh),TRUE
+Green Power - Offsite (kWh),TRUE
+Green Power - Onsite and Offsite (kWh),TRUE
+Total (Location-Based) GHG Emissions (Metric Tons CO2e),TRUE
+Total (Location-Based) GHG Emissions Intensity (kgCO2e/ftÂ²),TRUE
+Direct GHG Emissions (Metric Tons CO2e),TRUE
+Direct GHG Emissions Intensity (kgCO2e/ftÂ²),TRUE
+Indirect (Location-Based) GHG Emissions (Metric Tons CO2e),TRUE
+Indirect (Location-Based) GHG Emissions Intensity (kgCO2e/ftÂ²),TRUE
+Net Emissions (Metric Tons CO2e),TRUE
+National Median Total (Location-Based) GHG Emissions (Metric Tons CO2e),TRUE
+Avoided Emissions - Onsite Green Power (Metric Tons CO2e),TRUE
+Avoided Emissions - Offsite Green Power (Metric Tons CO2e),TRUE
+Avoided Emissions - Onsite and Offsite Green Power (Metric Tons CO2e),TRUE
+Percent of Electricity that is Green Power,TRUE
+Percent of RECs Retained,TRUE
+Percent of Total Electricity Generated from Onsite Renewable Systems,TRUE
+LEED US Project ID,TRUE
+Default Values,TRUE
+Temporary Values,TRUE
+Estimated Values - Energy,TRUE
+Estimated Values - Water,TRUE
+Alert - Energy Meter has less than 12 full calendar months of data,TRUE
+Alert - Energy Meter has gaps,TRUE
+Alert - Energy Meter has overlaps,TRUE
+Alert - Energy - No meters selected for metrics,TRUE
+Alert - Energy Meter has single entry more than 65 days,TRUE
+Alert - Property has no uses,TRUE
+Alert - Water Meter has less than 12 full calendar months of data,TRUE
+"Alert - Data Center Issue (with Estimates, IT Configuration, or IT Meter)",TRUE
+Alert - Gross Floor Area is 0 ft2,TRUE
+Estimated Data Flag - Electricity (Grid Purchase),TRUE
+Estimated Data Flag - Natural Gas,TRUE
+Estimated Data Flag - District Steam,TRUE
+Estimated Data Flag - Municipally Supplied Potable Water: Mixed Indoor/Outdoor Use,TRUE
+Estimated Data Flag - Fuel Oil (No. 1),TRUE
+Estimated Data Flag - Fuel Oil (No. 2),TRUE
+Estimated Data Flag - Fuel Oil (No. 4),TRUE
+Estimated Data Flag - Fuel Oil (No. 5 and No. 6),TRUE
+Estimated Data Flag - Diesel,TRUE
+Estimated Data Flag - Electricity (Onsite Solar),TRUE
+Data Center - UPS Output Meter (kWh),FALSE
+Data Center - PDU Input Meter (kWh),FALSE
+Data Center - PDU Output Meter (kWh),FALSE
+Data Center - IT Equipment Input Meter (kWh),FALSE
+Data Center - IT Site Energy (kWh),FALSE
+Data Center - IT Source Energy (kBtu),FALSE
+Data Center - PUE,FALSE
+Data Center - National Median PUE,FALSE
+Data Center - Gross Floor Area (ftÂ²),FALSE
+Data Center - UPS System Redundancy,FALSE
+Data Center - IT Energy Configuration,FALSE
+Data Center - Energy Estimates Applied,FALSE
+Data Center - Cooling Equipment Redundancy,FALSE
+Adult Education - Gross Floor Area (ftÂ²),FALSE
+Ambulatory Surgical Center - Gross Floor Area (ftÂ²),FALSE
+Vehicle Dealership - Gross Floor Area (ftÂ²),FALSE
+Bank Branch - Gross Floor Area (ftÂ²),FALSE
+Barracks- Gross Floor Area (ftÂ²),FALSE
+College/University - Gross Floor Area (ftÂ²),FALSE
+Convention Center - Gross Floor Area (ftÂ²),FALSE
+Courthouse - Gross Floor Area (ftÂ²),FALSE
+Distribution Center - Gross Floor Area (ftÂ²),FALSE
+Enclosed Mall - Gross Floor Area (ftÂ²),FALSE
+Energy/Power Station - Gross Floor Area (ftÂ²),FALSE
+Financial Office - Gross Floor Area (ftÂ²),FALSE
+Financial Office - Number of Computers,FALSE
+Financial Office - Weekly Operating Hours,FALSE
+Financial Office - Number of Workers on Main Shift,FALSE
+Fitness Center/Health Club/Gym - Gross Floor Area (ftÂ²),FALSE
+Food Sales - Gross Floor Area (ftÂ²),FALSE
+Food Service - Gross Floor Area (ftÂ²),FALSE
+Hospital (General Medical & Surgical) - Full-Time Equivalent (FTE) Workers,FALSE
+Hospital (General Medical & Surgical) - Gross Floor Area (ftÂ²),FALSE
+Hospital (General Medical & Surgical) - Laboratory,FALSE
+Hospital (General Medical & Surgical) - Licensed Bed Capacity,FALSE
+Hospital (General Medical & Surgical) - Number of MRI Machines,FALSE
+"Hospital (General Medical & Surgical) - MRI Density (Number per 1,000 sq ft)",FALSE
+Hospital (General Medical & Surgical) - Number of Staffed Beds,FALSE
+"Hospital (General Medical & Surgical) - Staffed Bed Density (Number per 1,000 sq ft)",FALSE
+"Hospital (General Medical & Surgical) - Full-Time Equivalent (FTE) Worker Density (Number per 1,000 sq ft)",FALSE
+Hospital (General Medical & Surgical) - Percent That Can Be Cooled,FALSE
+Hospital (General Medical & Surgical) - Percent That Can Be Heated,FALSE
+Medical Office - Gross Floor Area (ftÂ²),FALSE
+Medical Office - Number of Computers,FALSE
+Medical Office - Number of MRI Machines,FALSE
+Medical Office - Number of Workers on Main Shift,FALSE
+Medical Office - Percent That Can Be Cooled,FALSE
+Medical Office - Percent That Can Be Heated,FALSE
+Medical Office - Weekly Operating Hours,FALSE
+Outpatient Rehabilitation/Physical Therapy - Gross Floor Area (ftÂ²),FALSE
+Urgent Care/Clinic/Other Outpatient - Gross Floor Area (ftÂ²),FALSE
+Hotel - Gross Floor Area (ftÂ²),FALSE
+Hotel - Gym/fitness  Center Floor Area (ftÂ²),FALSE
+K-12 School - Gross Floor Area (ftÂ²),FALSE
+Pre-school/Daycare - Gross Floor Area (ftÂ²),FALSE
+Laboratory - Gross Floor Area (ftÂ²),FALSE
+Mailing Center/Post Office - Gross Floor Area (ftÂ²),FALSE
+Movie Theater - Gross Floor Area (ftÂ²),FALSE
+Manufacturing/Industrial Plant - Gross Floor Area (ftÂ²),FALSE
+Multifamily Housing - Government Subsidized Housing,FALSE
+Institutional Property? (Y/N),FALSE
+Multifamily Housing - Gross Floor Area (ftÂ²),FALSE
+Multifamily Housing - Number of Bedrooms,FALSE
+"Multifamily Housing - Number of Bedrooms Density (Number per 1,000 sq ft)",FALSE
+Multifamily Housing - Number of Laundry Hookups in All Units,FALSE
+Multifamily Housing - Number of Laundry Hookups in Common Area(s),FALSE
+Multifamily Housing - Number of Residential Living Units in a High-Rise Building (10 or more Stories),FALSE
+Multifamily Housing - Percent That Can Be Cooled,FALSE
+Multifamily Housing - Percent That Can Be Heated,FALSE
+Multifamily Housing - Total Number of Residential Living Units,FALSE
+"Multifamily Housing - Total Number of Residential Living Units Density (Number per 1,000 sq ft)",FALSE
+"Multifamily Housing - Number of Residential Living Units in a High-Rise Building Density (Number per 1,000 sq ft)",FALSE
+Multifamily Housing - Number of Residential Living Units in a Mid-Rise Building (5-9 Stories),FALSE
+"Multifamily Housing - Number of Residential Living Units in a Mid-Rise Building Density (Number per 1,000 sq ft)",FALSE
+Multifamily Housing - Resident Population Type,FALSE
+Residence Hall/Dormitory - Gross Floor Area (ftÂ²),FALSE
+Refrigerated Warehouse - Gross Floor Area (ftÂ²),FALSE
+Non-Refrigerated Warehouse - Gross Floor Area (ftÂ²),FALSE
+Office - Gross Floor Area (ftÂ²),FALSE
+Office - Number of Computers,FALSE
+Office - Number of Workers on Main Shift,FALSE
+Office - Percent That Can Be Cooled,FALSE
+Office - Percent That Can Be Heated,FALSE
+Office - Weekly Operating Hours,FALSE
+"Office - Worker Density (Number per 1,000 sq ft)",FALSE
+Other - Gross Floor Area (ftÂ²),FALSE
+Museum - Gross Floor Area (ftÂ²),FALSE
+Performing Arts - Gross Floor Area (ftÂ²),FALSE
+Parking - Gross Floor Area (ftÂ²),FALSE
+Parking - Open Parking Lot Size (ftÂ²),FALSE
+Parking - Completely Enclosed Parking Garage Size (ftÂ²),FALSE
+Parking - Partially Enclosed Parking Garage Size (ftÂ²),FALSE
+Restaurant - Gross Floor Area (ftÂ²),FALSE
+Restaurant - Weekly Operating Hours,FALSE
+"Restaurant - Worker Density (Number per 1,000 sq ft)",FALSE
+Retail Store - Gross Floor Area (ftÂ²),FALSE
+Retail Store - Number of Walk-in Refrigeration/Freezer Units,FALSE
+Retail Store - Number of Open or Closed Refrigeration/Freezer Units,FALSE
+Self-Storage Facility - Gross Floor Area (ftÂ²),FALSE
+Senior Living Community - Gross Floor Area (ftÂ²),FALSE
+"Senior Living Community - Living Unit Density (Number per 1,000 sq ft)",FALSE
+Social/Meeting Hall - Gross Floor Area (ftÂ²),FALSE
+Supermarket/Grocery - Gross Floor Area (ftÂ²),FALSE
+Supermarket/Grocery - Number of Walk-in Refrigeration/Freezer Units,FALSE
+Supermarket/Grocery - Number of Open or Closed Refrigeration/Freezer Units,FALSE
+Wholesale Club/Supercenter- Gross Floor Area (ftÂ²),FALSE
+Wholesale Club/Supercenter- Exterior Entrance to the Public,FALSE
+Wastewater Treatment Plant - Gross Floor Area (ftÂ²),FALSE
+Worship Facility - Gross Floor Area (ftÂ²),FALSE
+Strip Mall - Gross Floor Area (ftÂ²),FALSE
+Property GFA - Self-Reported (ftÂ²),TRUE
+Property GFA - Calculated (Buildings and Parking) (ftÂ²),TRUE
+Property GFA - Calculated (Buildings) (ftÂ²),TRUE
+Property GFA - Calculated (Parking) (ftÂ²),TRUE
+Property Notes,TRUE
+Water Use (All Water Sources) (kgal),TRUE
+Indoor Water Use (All Water Sources) (kgal),TRUE
+Outdoor Water Use (All Water Sources) (kgal),TRUE
+Municipally Supplied Potable Water - Mixed Indoor/Outdoor Use (kgal),TRUE
+Municipally Supplied Potable Water - Total Use (All Meter Types) (kgal),TRUE
+Municipally Supplied Potable Water - Indoor Use (kgal),TRUE
+Municipally Supplied Potable Water - Outdoor Use (kgal),TRUE
+Third Party Certification,TRUE
+Third Party Certification Date Anticipated,TRUE
+Third Party Certification Date Achieved,TRUE
+Data Quality Checker Run?,TRUE
+Data Quality Checker - Date Run,TRUE
+Last Modified Date - Property,TRUE
+Last Modified Date - Electric Meters,TRUE
+Electric Distribution Utility,TRUE
+Last Modified Date - Gas Meters,TRUE
+Last Modified Date - Non-Electric Non-Gas Energy Meters,TRUE
+Last Modified Date - Water Meters,TRUE
+Last Modified Date - Property Use,TRUE
+Last Modified Date - Property Use Details,TRUE
+Number of Active Energy Meters - Total,TRUE
+Number of Active Energy Meters - Used to Compute Metrics,TRUE
+Number of Active Energy Meters - Not Used to Compute Metrics,TRUE
+Number of Active IT Meters,TRUE
+Aggregate Meter(s)-Electric â€“ Number of Individual Meters Included,TRUE
+Aggregate Meter(s)-Natural Gas â€“ Number of Individual Meters Included,TRUE
+Aggregate Meter(s)-District Steam â€“ Number of Individual Meters Included,TRUE
+Report Generation Date,TRUE
+Report Submission Date,TRUE
+Borough,TRUE
+Latitude,TRUE
+Longitude,TRUE
+Community Board,TRUE
+Council District,TRUE
+Census Tract (2020),TRUE
+Neighborhood Tabulation Area (NTA) (2020),TRUE
