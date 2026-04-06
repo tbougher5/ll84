@@ -17,7 +17,7 @@ Production (Render / Railway / Hugging Face Spaces):
 USE_API   = False                # True  → live NYC Open Data API
                                  # False → local CSV (see CSV_PATH)
 
-CSV_PATH  = "ll84_data.csv"      # Path to the downloaded CSV file
+CSV_PATH  = "ll84_data_2024.csv"      # Path to the downloaded CSV file
                                  # Download from:
                                  # https://data.cityofnewyork.us/Environment/
                                  # NYC-Building-Energy-and-Water-Data-Disclosure-for-/5zyy-y8am
@@ -26,7 +26,7 @@ API_URL   = "https://data.cityofnewyork.us/resource/5zyy-y8am.json"
 API_LIMIT = 50_000               # Max rows to pull (dataset ≈ 30k rows/year)
 API_YEAR  = None                 # e.g. "2022" to restrict to one year, None for all
 
-HEADER_FILE = "LL84_Header.csv"  # Column inclusion config — TRUE rows are kept,
+HEADER_FILE = "LL84_Header-Long.csv"  # Column inclusion config — TRUE rows are kept,
                                  # FALSE rows are dropped. Must be in the same
                                  # folder as this script.
 # ============================================================
@@ -222,7 +222,6 @@ print(f"[startup] Kept {len(DF.columns)} of {len(DF_RAW.columns)} columns "
       f"based on LL84_Header.csv.")
 
 
-
 # ─────────────────────────────────────────────────────────────
 #  AG GRID COLUMN DEFINITIONS
 # ─────────────────────────────────────────────────────────────
@@ -277,7 +276,7 @@ def build_col_defs(df: pd.DataFrame) -> list[dict]:
                     "caseSensitive":       False,
                     "buttons":             ["reset"],
                     # Cross-platform text matcher: null-safe, handles all
-                    # filter options, and treats "contains" as regex-capable.
+                    # filter options, treats "contains" as regex-capable.
                     "textMatcher": {
                         "function": (
                             "const { filterOption, value, filterText } = params; "
@@ -762,7 +761,7 @@ def compute_stats(df: pd.DataFrame) -> tuple:
 
     if _valid_num(df, gfa_c):
         tot = pd.to_numeric(df[gfa_c], errors="coerce").sum()
-        tot_gfa = f"{tot / 1e3:,.0f}k ft²"
+        tot_gfa = f"{tot / 1e6:.3f}M ft²"
     else:
         tot_gfa = "—"
 
