@@ -221,28 +221,6 @@ DF: pd.DataFrame = DF_RAW[_KEEP].copy()
 print(f"[startup] Kept {len(DF.columns)} of {len(DF_RAW.columns)} columns "
       f"based on LL84_Header.csv.")
 
-# ── Force-coerce any column that is still object dtype but whose
-#    name suggests it should be numeric (GFA, year, counts, etc.).
-#    This catches columns like GFA that contain "Not Available" strings
-#    mixed with numbers, causing them to fail the 60% auto-coerce test.
-_FORCE_NUMERIC_PATTERNS = [
-    "gfa", "floor_area", "year_built", "number_of",
-    "occupancy", "score", "eui", "energy", "ghg",
-    "emissions", "intensity", "use_kbtu", "use_kwh",
-    "use_kgal", "use_therms", "percent", "pct",
-]
-for _c in DF.columns:
-    if DF[_c].dtype == object:
-        _c_lower = _c.lower()
-        if any(pat in _c_lower for pat in _FORCE_NUMERIC_PATTERNS):
-            _coerced = pd.to_numeric(DF[_c], errors="coerce")
-            _non_null_orig = DF[_c].notna().sum()
-            _non_null_new  = _coerced.notna().sum()
-            # Only apply if at least 30% of non-null values parsed as numbers
-            if _non_null_orig > 0 and (_non_null_new / _non_null_orig) >= 0.30:
-                DF[_c] = _coerced
-                print(f"[startup] Force-coerced '{_c}' to numeric "
-                      f"({_non_null_new:,}/{_non_null_orig:,} values converted).")
 
 
 # ─────────────────────────────────────────────────────────────
